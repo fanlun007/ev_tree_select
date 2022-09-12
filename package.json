@@ -1,0 +1,47 @@
+{
+  "name": "ev_tree_select",
+  "author": "fanlun007",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "license": "MIT",
+  "main": "dist/ev_tree_select.js",
+  "unpkg": "dist/ev_tree_select.umd.cjs",
+  "module": "dist/ev_tree_select.js",
+  "files": [
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fanlun007/ev_tree_select.git"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "vuejs",
+    "element plus",
+    "el-tree-select"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.37",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "lodash-unified": "^1.0.2",
+    "@types/lodash": "^4.14.182",
+    "@types/lodash-es": "^4.17.6"
+  },
+  "devDependencies": {
+    "element-plus": "^2.2.16",
+    "@types/node": "^18.7.16",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "typescript": "^4.6.4",
+    "unplugin-element-plus": "^0.4.1",
+    "vite": "^3.1.0",
+    "vue-tsc": "^0.40.4"
+  }
+}
