@@ -14,9 +14,13 @@ export default defineComponent({
     ...ElSelect.props,
     ...ElTree.props,
     singleBetweenGroup: {
-        type: Boolean,
-        default: false
-    }
+      type: Boolean,
+      default: false,
+    },
+    onlyParentKey: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
     const { slots, expose } = context;
@@ -33,7 +37,7 @@ export default defineComponent({
     const methods = reactive({});
     expose(methods);
     onMounted(() => {
-      console.log("check tree ref,", tree.value);
+      // console.log("check tree ref,", tree.value);
 
       Object.assign(methods, {
         ...pick(tree.value, [

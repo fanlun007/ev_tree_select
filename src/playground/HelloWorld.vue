@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, unref, watch } from "vue";
 import EVTreeSelect from "@lib/tree-select/index.vue";
 // import { EVTreeSelect } from "../../dist/ev_tree_select.js";
 
@@ -45,37 +45,40 @@ const sourceData = [
   },
   {
     value: "3",
-    label: "Level one 3",
+    label: "Level three 3",
     children: [
       {
         value: "3-1",
-        label: "Level two 3-1",
+        label: "Level three 3-1",
       },
       {
         value: "3-2",
-        label: "Level two 3-2",
+        label: "Level three 3-2",
       },
       {
         value: "3-3",
-        label: "Level two 3-3",
+        label: "Level three 3-3",
       },
       {
         value: "3-4",
-        label: "Level two 3-3",
+        label: "Level three 3-3",
       },
       {
         value: "3-5",
-        label: "Level two 3-3",
+        label: "Level three 3-3",
       },
       {
         value: "3-6",
-        label: "Level two 3-3",
+        label: "Level three 3-3",
       },
     ],
   },
 ];
 const data = ref(sourceData);
-const valueStrictly = ref(["2-1"]);
+const valueStrictly = ref(["2"]);
+watch(valueStrictly, (newVal, oldVal) => {
+  console.log("check select: ", unref(valueStrictly));
+});
 </script>
 
 <template>
@@ -91,6 +94,7 @@ const valueStrictly = ref(["2-1"]);
     check-on-click-node
     :expand-on-click-node="false"
     :single-between-group="true"
+    :onlyParentKey="true"
   />
 
   <div class="card">
