@@ -190,10 +190,17 @@ export const useTree = (
           ).getCheckedKeys(true);
           if (props.onlyParentKey) {
             const parentKey = difference(allCheckKey, leafOnlyKey);
-            emit(
-              UPDATE_MODEL_EVENT,
-              parentKey?.length > 0 ? parentKey : leafOnlyKey
-            );
+            if (
+              parentKey?.length == 1 &&
+              parentKey[0].toString().indexOf("-") > -1
+            ) {
+              emit(UPDATE_MODEL_EVENT, leafOnlyKey);
+            } else {
+              emit(
+                UPDATE_MODEL_EVENT,
+                parentKey?.length > 0 ? parentKey : leafOnlyKey
+              );
+            }
           } else {
             emit(UPDATE_MODEL_EVENT, leafOnlyKey);
           }

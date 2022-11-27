@@ -2,7 +2,7 @@
   "name": "ev_tree_select",
   "author": "fanlun007",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "license": "MIT",
   "main": "dist/ev_tree_select.js",

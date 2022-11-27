@@ -44,7 +44,7 @@ const sourceData = [
     ],
   },
   {
-    value: "3",
+    value: "3-parent",
     label: "Level three 3",
     children: [
       {
